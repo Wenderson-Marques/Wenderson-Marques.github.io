@@ -5,6 +5,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    transition: all .3s;
 }
 body
 {
@@ -20,7 +21,8 @@ body
     --bio-bg-color:#1e2a3a;
     --bio-border-color:#293544;
     --about-bg-color:#111821;
-}/*general*/
+}
+/*general*/
 .highligth
 {
     color:var(--main-color);
@@ -41,6 +43,7 @@ body
     text-align: center;
     padding: 30px 12px;
     border-right: 5px solid var(--bio-border-color);
+    
 }
 #about-container
 {
@@ -52,11 +55,7 @@ body
 }
 
 /*bio-container*/
-#bio-container
-{
-    margin-bottom: 25px;
 
-}
 #bio-container p 
 {
     margin-bottom: 20px;
@@ -65,12 +64,18 @@ body
 
 #bio-img 
 {
+    position: relative;
     width: 175px;
     height:175px;
     border-radius: 50%;
     margin-bottom: 25px;
-
+    
 }
+
+
+
+
+
 #welcome-text
 {
     font-weight: bold;
@@ -93,6 +98,10 @@ body
 {
     color: var(--main-color);
     font-size: 30px;
+}
+#social-container p 
+{
+    display: none;
 }
 #email-container
 {
@@ -201,8 +210,9 @@ body
   font-size: 45px;
   margin-right: 10px;
 }
+
 /*test*/
-.line::after
+.line::after,#line::after
 {
     content: "";
     display: block;
@@ -214,8 +224,63 @@ body
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
 }
-.line:hover::after
+.line:hover::after,#line:hover::after
 {
     transform:scaleX(1);
     transform-origin: bottom left;
+}
+
+/* mobile */
+
+@media(max-width:600px){
+
+
+#container
+{
+    flex-direction: column;
+}
+#bio-container
+{
+    min-height: auto;
+    border-radius: none;
+    border-bottom: 5px solid var(--bio-bg-color);
+}
+.line
+{
+    display: none;
+}
+#bio-container p 
+{
+    max-width: 60%;
+    margin: 10px auto;
+
+}
+#about-container
+{
+    text-align: center;
+    padding: 30px;
+
+}
+#about-container .description
+{
+    margin: 10px auto ;
+    max-width: 100%;
+    line-height: 26px;
+
+}
+#btn-project
+{
+    margin: 20px auto;
+}
+.skills-box
+{
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-bottom: 40px;
+    text-align: left;
+}
+.skills-box i 
+{
+    font-size: 60px;
+}
 }
